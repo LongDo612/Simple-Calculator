@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+            <div style="border: solid 6px black; width: 410px">
+                <input type="text" id="value" size="30px" style="margin-top: 10px;">
+                <table>
+                    <tr>
+                        <td onclick="operatoR('1')"><b>1</b></td>
+                        <td onclick="operatoR('2')"><b>2</b></td>
+                        <td onclick="operatoR('3')"><b>3</b></td>
+                        <td onclick="operatoR('+')"><b>+</b></td>
+                    </tr>
+
+                    <tr>
+                        <td onclick="operatoR('4')"><b>4</b></td>
+                        <td onclick="operatoR('5')"><b>5</b></td>
+                        <td onclick="operatoR('6')"><b>6</b></td>
+                        <td onclick="operatoR('-')"><b>-</b></td>
+                    </tr>
+
+                    <tr>
+                        <td onclick="operatoR('7')"><b>7</b></td>
+                        <td onclick="operatoR('8')"><b>8</b></td>
+                        <td onclick="operatoR('9')"><b>9</b></td>
+                        <td onclick="operatoR('*')"><b>x</b></td>
+                    </tr>
+
+                    <tr>
+                        <td onclick="cal()"><b>C</b></td>
+                        <td><b>0</b></td>
+                        <td onclick="cal()"><b>=</b></td>
+                        <td><b>/</b></td>
+                    </tr>
+                </table>
+            </div>
+
+    <script>
+        let a = document.getElementById("value");
+
+        let operatoR = (operator) => {
+            a.value += operator;
+        }
+
+        let cal = () => {
+            let result = eval(a.value);
+            a.value = result;
+        }
+
+        let deletE = () => {
+            a.value="";
+        }
+    </script>
+</body>
+</html>
